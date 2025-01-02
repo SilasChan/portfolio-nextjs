@@ -9,7 +9,7 @@ const Portfolio = () => {
       <div className="text-center bold-18 uppercase tracking-[1rem] text-[#F7AB0A] pb-20">
         Portfolio
       </div>
-      <ul className="mt-12 grid gap-14 md:grid-cols-2 xl:grid-cols-3 w-[95%] m-auto">
+      <ul className="mt-12 grid gap-14 md:grid-cols-2 xl:grid-cols-2 w-[95%] m-auto">
         {PORTFOLIO.map((portfolio) => (
           <PortfolioItem
             key={portfolio.title}
@@ -50,7 +50,7 @@ const PortfolioItem = ({ title, imgURL, description }: PortfolioItem) => {
             type="button"
             title="View code"
             icon="/github.svg"
-            variant="btn_white_rounded"
+            variant="btn_white_rounded"`
           />
         </div>
       </div>

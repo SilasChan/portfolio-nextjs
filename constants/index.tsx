@@ -1,39 +1,86 @@
 // Navigation
 export const Nav_LINKS = [
-  { href: "/", key: "home", label: "Home" },
+  // { href: "/", key: "home", label: "Home" },
   { href: "/", key: "about", label: "About" },
   { href: "/", key: "skills", label: "Skills" },
-  { href: "/", key: "certifications", label: "Certifications" },
-  { href: "/", key: "portfolio", label: "Portfolio" },
+  { href: "/", key: "certificatie", label: "Certificatie" },
+  // { href: "/", key: "portfolio", label: "Portfolio" },
   // { href: "/", key: "testimonial", label: "Testimonial" },
-  { href: "/", key: "contact", label: "Contact Us" },
+  // { href: "/", key: "contact", label: "Contact Us" },
 ]
 
 // Skills Section
 export const SKILLS = [
   {
-    title: "frontend",
-    icon: "/frontend.svg",
-    description:
-      "I have experience building websites using JavaScript, React, and Tailwind CSS.",
+    title: "Technical Support and Troubleshooting",
+    icon: "/support.svg",
+    subItems: [
+      "Hardware and software issue resolution",
+      "Remote and on-site support",
+      "Ticket management and escalation",
+    ],
   },
   {
-    title: "backend",
-    icon: "/backend.svg",
-    description:
-      "I have experience building websites using JavaScript, React, and Tailwind CSS.",
+    title: "Office 365 Administration and Support",
+    icon: "/office.svg",
+    subItems: [
+      "User account management",
+      "Email and collaboration tool configuration",
+      "SharePoint and OneDrive administration",
+    ],
   },
   {
-    title: "fullstack",
+    title: "Network Troubleshooting",
+    icon: "/network.svg",
+    subItems: [
+      "Diagnosing and resolving connectivity issues",
+      "Analyzing network performance and bottlenecks",
+      "Troubleshooting Wi-Fi and wireless network problems",
+    ],
+  },
+  {
+    title: "IT Training and Documentation",
     icon: "/stack.svg",
-    description:
-      "I have experience building websites using JavaScript, React, and Tailwind CSS.",
+    subItems: [
+      "Conducting user training sessions",
+      "Creating and maintaining IT documentation",
+      "Developing user guides and FAQs",
+    ],
   },
+  {
+    title: "Project Support and Implementation",
+    icon: "/frontend.svg",
+    subItems: [
+      "Assisting with local and global IT projects",
+      "Hardware and software deployment, User migration and onboarding",
+    ],
+  },
+  {
+    title: "IT Asset Management and Procurement",
+    icon: "/laptop.svg",
+    subItems: [
+      "Inventory tracking and management",
+      "Software licensing and compliance",
+      "Hardware lifecycle management and procurement support",
+    ],
+  },
+
+  // },
+  // {
+  //   title: "Frontend Web Development",
+  //   icon: "/stack.svg",
+  //   description:
+  //     "I have experience building websites using JavaScript, React, and Tailwind CSS.",
+  // },
 ]
 
 // Certifications
 
 export const Certificates = [
+  {
+    title: "AWS Certified Cloud Practitoner",
+    icon: "/aws_CloudPractitioner.png",
+  },
   {
     title: "Azure Administrator Associate",
     icon: "/azure-administrator-associate.png",
@@ -60,11 +107,6 @@ export const PORTFOLIO = [
     ImgURL: "/project2.png",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
   },
-  {
-    title: "Project 3",
-    ImgURL: "/project3.png",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-  },
 ]
 
 // Testimonials Section
@@ -72,14 +114,25 @@ export const PORTFOLIO = [
 // Footer Section
 
 export const FOOTER_LINKS = [
-  { href: "/", key: "home", label: "Home" },
-  { href: "/", key: "skills", label: "Skills" },
-  { href: "/", key: "certifications", label: "Certifications" },
-  { href: "/", key: "portfolio", label: "Portfolio" },
+  // { href: "/", key: "home", label: "Home", sectionId: "home-section" },
+  { href: "/", key: "about", label: "About", sectionId: "about-section" },
+  { href: "/", key: "skills", label: "Skills", sectionId: "skills-section" },
+  {
+    href: "/",
+    key: "certificate",
+    label: "Certificate",
+    sectionId: "certificate-section",
+  },
+  // { href: "/", key: "portfolio", label: "Portfolio" },
 ]
 
 export const SOCIALS = [
   { href: "/", key: "github", imgURL: "/github.svg" },
+  {
+    href: "http://www.linkedin.com/in/silas-chan",
+    key: "linkedin",
+    imgURL: "/linkedin.svg",
+  },
   // { href: "/", key: "instagram", imgURL: "/instagram.svg" },
   // { href: "/", key: "twitter", imgURL: "/twitter.svg" },
   // { href: "/", key: "youtube", imgURL: "/youtube.svg" },

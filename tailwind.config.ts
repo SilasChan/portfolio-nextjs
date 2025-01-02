@@ -35,6 +35,9 @@ export default {
       borderRadius: {
         "5xl": "40px",
       },
+      fontFamily: {
+        martianMono: ["var(--font-martian-mono)"],
+      },
     },
   },
   plugins: [],
