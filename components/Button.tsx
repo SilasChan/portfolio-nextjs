@@ -8,7 +8,7 @@ type ButtonProps = {
   title: string
   icon?: string
   variant: string
-  action: "download" | "contact"
+  action: string
   href?: string
 }
 
