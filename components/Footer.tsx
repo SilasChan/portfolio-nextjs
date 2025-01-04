@@ -55,7 +55,7 @@ const Footer: React.FC = () => {
                   onClick={() => scrollToSection(link.sectionId)} // Pass sectionId instead of href
                   className={`p-4 text-sm font-medium ${
                     activeSection === link.key
-                      ? "text-white bg-dark-500"
+                      ? "bg-dark-500"
                       : "text-black hover:text-white hover:bg-dark-500"
                   } transition-colors`}
                 >

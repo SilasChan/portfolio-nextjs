@@ -25,7 +25,9 @@ const Navbar: React.FC = () => {
       const scrollPosition = window.scrollY
       const sections = NAV_LINKS.map((link) => {
         const element = document.querySelector(link.href)
-        return element ? { id: link.id, top: element.offsetTop - 100 } : null
+        return element
+          ? { id: link.id, top: (element as HTMLElement).offsetTop - 100 }
+          : null
       }).filter(
         (section): section is NonNullable<typeof section> => section !== null
       )
@@ -142,9 +144,7 @@ const NavLink: React.FC<NavLinkProps> = ({
   const classes = `${baseClasses} ${
     isMobile ? mobileClasses : desktopClasses
   } ${
-    isActive
-      ? "bg-dark-500 text-white"
-      : "text-black hover:bg-dark-500 hover:text-white"
+    isActive ? "bg-dark-500" : "text-black hover:bg-dark-500 hover:text-white"
   }`
 
   return (
