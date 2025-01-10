@@ -46,7 +46,7 @@ const Hero = () => {
               icon="./download.svg"
               variant="btn_dark_rounded"
               action="download"
-              href="/Silas Chan.pdf"
+              href="/silasChan_resume.pdf"
             />
             <Button
               type="button"
