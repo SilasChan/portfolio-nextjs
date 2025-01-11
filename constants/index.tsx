@@ -3,7 +3,7 @@ export const Nav_LINKS = [
   { href: "/", key: "about", label: "About" },
   { href: "/", key: "skills", label: "Skills" },
   { href: "/", key: "certificatie", label: "Certificatie" },
-  // { href: "/", key: "portfolio", label: "Portfolio" },
+  { href: "/", key: "portfolio", label: "Portfolio" },
   // { href: "/", key: "contact", label: "Contact Us" },
 ]
 
@@ -96,14 +96,49 @@ export const Certificates = [
 // Portfolio Section
 export const PORTFOLIO = [
   {
-    title: "Project 1",
+    title: "Google Cloud Platform (GCP) Migration",
     ImgURL: "/project1.png",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    description:
+      "Collaborated with Accenture to migrate local servers to GCP, managing critical tasks such as AAD authentication, SQL Server Express transfer, and SSL certificate setup.",
+    technologies: [
+      "Google Cloud Platform (GCP)",
+      "Azure Active Directory (AAD)",
+      "SQL Server",
+      "IIS",
+      "SSL Certificates",
+    ],
+    achievements: [
+      "Migrated all local servers to GCP, ensuring zero downtime.",
+      "Configured secure web servers and application redirection.",
+      "Facilitated seamless authentication using AAD.",
+    ],
+    duration: ["3 months"],
   },
   {
-    title: "Project 2",
+    title: "D2 Network",
     ImgURL: "/project2.png",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    description:
+      "Proficiently troubleshoot network issues at the D2 site office, ensuring stable and reliable connectivity. Successfully delivered effective solutions that improved overall user experience. Additionally, I played a key role in suggesting and assisting with the procurement, installation, and configuration of enterprise routers, which enabled remote network monitoring and enhanced overall system performance.",
+    technologies: ["WAN", "LAN", "SWITCHES", "AP"],
+    achievements: [
+      "Resolved complex connectivity problems efficiently",
+      "Improved site office network stability",
+      "Deployed solutions that monitor site office network remotely",
+    ],
+    duration: ["4 months"],
+  },
+  {
+    title: "AD Migration",
+    ImgURL: "/project3.png",
+    description:
+      "Coordinated and participated in AD migration globally, including user account, computer, and local server, migrate to new domains. Additionally, led the implementation of Intune device/Azure AD migration and Office 365/Exchange environments.",
+    technologies: ["Active Directory", "Azure AD", "Intune", "Office 365"],
+    achievements: [
+      "Successfully migrated over 100 users and devices across multiple departments.",
+      "Streamlined Intune and Azure AD integrations for better device management.",
+      "Achieved zero downtime during the entire migration process.",
+    ],
+    duration: ["3 months"],
   },
 ]
 
@@ -113,6 +148,12 @@ export const PORTFOLIO = [
 
 export const FOOTER_LINKS = [
   { href: "/", key: "about", label: "About", sectionId: "about-section" },
+  {
+    href: "/",
+    key: "portfolio",
+    label: "Portfolio",
+    sectionId: "portfolio-section",
+  },
   { href: "/", key: "skills", label: "Skills", sectionId: "skills-section" },
   {
     href: "/",
@@ -120,7 +161,6 @@ export const FOOTER_LINKS = [
     label: "Certificate",
     sectionId: "certificate-section",
   },
-  // { href: "/", key: "portfolio", label: "Portfolio" },
 ]
 
 export const SOCIALS = [

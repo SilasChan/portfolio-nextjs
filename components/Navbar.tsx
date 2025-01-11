@@ -12,6 +12,7 @@ type NavLink = {
 
 const NAV_LINKS: NavLink[] = [
   { id: "about", href: "#about-section", label: "About" },
+  { id: "portfolio", href: "#portfolio-section", label: "Portfolio" },
   { id: "skills", href: "#skills-section", label: "Skills" },
   { id: "certificate", href: "#certificate-section", label: "Certificate" },
 ]

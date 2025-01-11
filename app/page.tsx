@@ -1,9 +1,9 @@
 // import Navbar from "@/components/Navbar"
-import About from "@/components/About"
 import Hero from "@/components/Hero"
-
-import Certifications from "@/components/Certifications"
+import About from "@/components/About"
+import Portfolio from "@/components/Portfolio"
 import Skills from "@/components/Skills"
+import Certifications from "@/components/Certifications"
 import React from "react"
 
 const page = () => {
@@ -16,6 +16,9 @@ const page = () => {
         </section>
         <section id="about-section">
           <About />
+        </section>
+        <section id="portfolio-section">
+          <Portfolio />
         </section>
         <section id="skills-section">
           <Skills />
