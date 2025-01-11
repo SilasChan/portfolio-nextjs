@@ -45,12 +45,14 @@ const PortfolioItem = ({ title, imgURL, description }: PortfolioItem) => {
             title="Read more"
             icon="/more.svg"
             variant="btn_dark_rounded"
+            action="read more"
           />
           <Button
             type="button"
             title="View code"
             icon="/github.svg"
-            variant="btn_white_rounded"`
+            variant="btn_white_rounded"
+            action="view code"
           />
         </div>
       </div>

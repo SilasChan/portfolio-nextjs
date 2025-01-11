@@ -1,11 +1,9 @@
 // Navigation
 export const Nav_LINKS = [
-  // { href: "/", key: "home", label: "Home" },
   { href: "/", key: "about", label: "About" },
   { href: "/", key: "skills", label: "Skills" },
   { href: "/", key: "certificatie", label: "Certificatie" },
   // { href: "/", key: "portfolio", label: "Portfolio" },
-  // { href: "/", key: "testimonial", label: "Testimonial" },
   // { href: "/", key: "contact", label: "Contact Us" },
 ]
 
@@ -114,7 +112,6 @@ export const PORTFOLIO = [
 // Footer Section
 
 export const FOOTER_LINKS = [
-  // { href: "/", key: "home", label: "Home", sectionId: "home-section" },
   { href: "/", key: "about", label: "About", sectionId: "about-section" },
   { href: "/", key: "skills", label: "Skills", sectionId: "skills-section" },
   {
@@ -127,7 +124,11 @@ export const FOOTER_LINKS = [
 ]
 
 export const SOCIALS = [
-  { href: "/", key: "github", imgURL: "/github.svg" },
+  {
+    href: "https://github.com/SilasChan?tab=repositories",
+    key: "github",
+    imgURL: "/github.svg",
+  },
   {
     href: "http://www.linkedin.com/in/silas-chan",
     key: "linkedin",
