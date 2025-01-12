@@ -174,6 +174,11 @@ export const SOCIALS = [
     key: "linkedin",
     imgURL: "/linkedin.svg",
   },
+  {
+    href: "https://medium.com/@silaschan421",
+    key: "medium",
+    imgURL: "/medium.svg",
+  },
   // { href: "/", key: "instagram", imgURL: "/instagram.svg" },
   // { href: "/", key: "twitter", imgURL: "/twitter.svg" },
   // { href: "/", key: "youtube", imgURL: "/youtube.svg" },
