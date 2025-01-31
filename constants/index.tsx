@@ -84,7 +84,7 @@ export const Certificates = [
     icon: "/azure-administrator-associate.png",
   },
   {
-    title: "Azure Funadmental",
+    title: "Azure Fundamental",
     icon: "/azure-fundamentals.png",
   },
   {

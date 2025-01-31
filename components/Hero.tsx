@@ -6,7 +6,7 @@ import Button from "./Button"
 
 const Hero = () => {
   return (
-    <section className="max-container padding-container gap-20 py-10 pb-32 md:gap-28 lg:py-20 xl:flex-row">
+    <section className="max-container padding-container bg-[#f7f7f7] gap-20 py-10 pb-32 md:gap-28 lg:py-20 xl:flex-row">
       {/* Title */}
       <div className="text-center bold-18 uppercase tracking-[1rem] text-[#F7AB0A] mb-10">
         Welcome

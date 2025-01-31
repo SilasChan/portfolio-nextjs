@@ -20,6 +20,12 @@ export default {
           50: "#585858",
           90: "#141414",
         },
+        dark: {
+          100: "#f5f5f5", // Example light gray
+          200: "#d1d5db", // Lighter color shades for dark mode
+          800: "#1f2937", // Dark background
+          900: "#111827", // Even darker shade
+        },
       },
       backgroundImage: {
         pattern: 'url("../images/pattern.svg")',
@@ -41,4 +47,5 @@ export default {
     },
   },
   plugins: [],
+  darkMode: "class",
 }

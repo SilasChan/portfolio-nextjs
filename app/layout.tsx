@@ -1,4 +1,5 @@
 import { Martian_Mono } from "next/font/google"
+import { Provider } from "@/components/Providers"
 import type { Metadata } from "next"
 import "./globals.css"
 import Navbar from "@/components/Navbar"
@@ -27,9 +28,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={martianMono.variable}>
       <body className="font-martianMono">
-        <Navbar />
-        <main className="relative overflow-hidden">{children}</main>
-        <Footer />
+        <Provider>
+          <Navbar />
+          <main className="relative overflow-hidden">{children}</main>
+          <Footer />
+        </Provider>
       </body>
     </html>
   )

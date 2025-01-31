@@ -4,7 +4,7 @@ import Image from "next/image"
 
 const About = () => {
   return (
-    <section className="max-container padding-container gap-20 py-10 pb-32 md:gap-28 lg:py-20 bg-[#f7f7f7]">
+    <section className="max-container padding-container bg-[#f7f7f7] gap-20 py-10 pb-32 md:gap-28 lg:py-20">
       <div className="text-center bold-18 uppercase tracking-[1rem] text-[#F7AB0A] pb-20">
         About
       </div>

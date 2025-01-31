@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState, useEffect } from "react"
+import ThemeToggle from "./ThemeToggle"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -42,7 +43,7 @@ const Navbar: React.FC = () => {
     }
 
     window.addEventListener("scroll", handleScroll)
-    handleScroll() // Call once to set initial active section
+    handleScroll()
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
@@ -51,7 +52,7 @@ const Navbar: React.FC = () => {
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href)
     if (element) {
-      const navbarHeight = 80 // Adjust this value based on your navbar height
+      const navbarHeight = 80
       const elementPosition = element.getBoundingClientRect().top
       const offsetPosition = elementPosition + window.pageYOffset - navbarHeight
 
@@ -64,8 +65,9 @@ const Navbar: React.FC = () => {
   }
 
   return (
-    <nav className="padding-container fixed top-0 left-0 right-0 z-30 bg-[#F7AB0A] shadow-xl ring-1 ring-slate-100 py-4">
+    <nav className="padding-container fixed top-0 left-0 right-0 z-30 bg-[#F7AB0A] dark:bg-gray-900 shadow-xl ring-1 ring-slate-100 dark:ring-slate-800 py-4">
       <div className="flex justify-between items-center max-w-7xl mx-auto">
+        {/* Logo */}
         <button
           onClick={() => scrollToSection("#home-section")}
           className="relative flex items-center"
@@ -74,12 +76,13 @@ const Navbar: React.FC = () => {
             <Image
               src="/apple-touch-icon.png"
               alt="Logo"
-              width={40} // Adjust width
-              height={40} // Adjust height
+              width={40}
+              height={40}
               className="rounded-full"
             />
           </Link>
         </button>
+        {/* Desktop Links */}
         <ul className="hidden lg:flex space-x-6">
           {NAV_LINKS.map((link) => (
             <NavLink
@@ -90,7 +93,12 @@ const Navbar: React.FC = () => {
               onClick={() => scrollToSection(link.href)}
             />
           ))}
+          {/* Theme Toggle Icon */}
+          <li className="flex items-center">
+            <ThemeToggle />
+          </li>
         </ul>
+        {/* Mobile Menu Toggle */}
         <button onClick={toggleMenu} className="lg:hidden focus:outline-none">
           <Image
             src={isOpen ? "/close.svg" : "/menu.svg"}
@@ -101,7 +109,7 @@ const Navbar: React.FC = () => {
           />
         </button>
       </div>
-      {/* Mobile menu */}
+      {/* Mobile Menu */}
       {isOpen && (
         <div className="lg:hidden mt-4">
           <div className="flex flex-col space-y-2">
@@ -115,6 +123,10 @@ const Navbar: React.FC = () => {
                 onClick={() => scrollToSection(link.href)}
               />
             ))}
+            {/* Theme Toggle in Mobile Menu */}
+            <li className="flex items-center justify-center">
+              <ThemeToggle />
+            </li>
           </div>
         </div>
       )}
@@ -145,7 +157,9 @@ const NavLink: React.FC<NavLinkProps> = ({
   const classes = `${baseClasses} ${
     isMobile ? mobileClasses : desktopClasses
   } ${
-    isActive ? "bg-dark-500" : "text-black hover:bg-dark-500 hover:text-white"
+    isActive
+      ? "text-white" // Only white text when active
+      : "text-black hover:text-white dark:text-gray-300 dark:hover:text-[#F7AB0A] "
   }`
 
   return (
