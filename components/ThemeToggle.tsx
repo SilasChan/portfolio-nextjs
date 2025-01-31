@@ -1,15 +1,21 @@
+//
+
 import React, { useEffect, useState } from "react"
 import { useTheme } from "next-themes"
 import { FaSun, FaMoon } from "react-icons/fa"
 
 const ThemeToggle: React.FC = () => {
-  const { theme, setTheme, resolvedTheme } = useTheme()
+  const { theme, setTheme, resolvedTheme, systemTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
-  // Prevent mismatch during hydration
   useEffect(() => {
     setMounted(true)
-  }, [])
+
+    // Ensure the theme defaults to light if no preference is set
+    if (!localStorage.getItem("theme")) {
+      setTheme("light")
+    }
+  }, [setTheme])
 
   if (!mounted) return null
 
