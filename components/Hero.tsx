@@ -40,14 +40,14 @@ const Hero = () => {
           </p>
 
           <div className="flex gap-4">
-            <Button
+            {/* <Button
               type="button"
               title="Download CV"
               icon="./download.svg"
               variant="btn_dark_rounded"
               action="download"
               href="/silasChan_resume.pdf"
-            />
+            /> */}
             <Button
               type="button"
               title="Contact Me"
