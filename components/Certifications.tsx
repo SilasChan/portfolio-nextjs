@@ -7,15 +7,13 @@ import Image from "next/image"
 type Certificate = {
   title: string
   icon: string
-  status?: "earned" | "undertaking"
+  status: "earned" | "undertaking"
 }
 
 const Certifications = () => {
-  const earnedCerts = Certificates.filter(
-    (c: Certificate) => c.status !== "undertaking"
-  )
+  const earnedCerts = Certificates.filter((c) => c.status === "earned")
   const undertakingCerts = Certificates.filter(
-    (c: Certificate) => c.status === "undertaking"
+    (c) => c.status === "undertaking"
   )
 
   return (

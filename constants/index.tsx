@@ -78,22 +78,27 @@ export const Certificates = [
   {
     title: "Security, Compliance, and Identity Fundamentals",
     icon: "/security-compliance-identity-fundamentals.svg",
+    status: "earned",
   },
   {
     title: "AWS Certified Cloud Practitoner",
     icon: "/aws_CloudPractitioner.png",
+    status: "earned",
   },
   {
     title: "Azure Administrator Associate",
     icon: "/azure-administrator-associate.svg",
+    status: "earned",
   },
   {
     title: "Azure Fundamental",
     icon: "/azure-fundamentals.svg",
+    status: "earned",
   },
   {
     title: "ITIL 4 Foundation in IT Service Management",
     icon: "/ITIL_FoundationV4.png",
+    status: "earned",
   },
   {
     title: "CompTIA Network+",
