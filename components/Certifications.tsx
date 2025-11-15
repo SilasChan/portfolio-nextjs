@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react"
-import { Certificates } from "@/constants"
+import { Certificates } from "@/constants/index"
 import Image from "next/image"
 
 type Certificate = {
