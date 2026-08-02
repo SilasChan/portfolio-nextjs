@@ -1,4 +1,5 @@
 "use client"
+
 import React from "react"
 import Image from "next/image"
 import { Typewriter } from "react-simple-typewriter"
@@ -6,48 +7,40 @@ import Button from "./Button"
 
 const Hero = () => {
   return (
-    <section className="max-container padding-container bg-[#f7f7f7] gap-20 py-10 pb-32 md:gap-28 lg:py-20 xl:flex-row">
-      {/* Title */}
-      <div className="text-center bold-18 uppercase tracking-[1rem] text-[#F7AB0A] mb-10">
-        Welcome
-      </div>
-
-      {/* Content */}
-      <div className="grid gap-12 md:grid-cols-2 items-center md:gap-16 lg:gap-20">
+    <section className="max-container padding-container bg-[#f7f7f7] gap-20 py-10 pb-32 md:gap-28 lg:py-20">
+      <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16 lg:gap-20">
         {/* Left Section */}
-        <div className="flex flex-col items-center md:items-start text-center md:text-left">
-          <h4 className="text-xl font-bold mb-4">Hello,</h4>
-          <h1 className="text-4xl lg:text-5xl font-bold text-[#F7AB0A] mb-2">
-            I'm Silas Chan
-          </h1>
-          <h2 className="text-2xl lg:text-3xl font-bold capitalize text-[#F7AB0A] mb-6">
-            A{" "}
-            <span>
-              <Typewriter
-                words={["Coder", "Runner", "Worker"]}
-                loop={true}
-                cursor
-                cursorStyle="_"
-                typeSpeed={70}
-                deleteSpeed={50}
-                delaySpeed={1000}
-              />
-            </span>
-          </h2>
-          <p className="regular-16 text-gray-30 mb-8 max-w-[555px]">
-            Solution-oriented, Performance-focused, Curious, Forward-thinking,
-            Continuous learner, Adaptable
-          </p>
+        <div className="flex flex-col items-center text-center md:items-start md:text-left">
+          <p className="mb-3 text-lg font-semibold text-gray-900">Hello,</p>
 
-          <div className="flex gap-4">
-            {/* <Button
-              type="button"
-              title="Download CV"
-              icon="./download.svg"
-              variant="btn_dark_rounded"
-              action="download"
-              href="/silasChan_resume.pdf"
-            /> */}
+          <h1 className="mb-2 text-5xl font-bold leading-tight text-[#F7AB0A] lg:text-6xl">
+            I&apos;m Silas Chan
+          </h1>
+
+          <h2 className="mb-6 min-h-[42px] text-3xl font-bold text-[#F7AB0A]">
+            <Typewriter
+              words={["Aspiring Cloud Engineer"]}
+              loop={false}
+              cursor
+              cursorStyle="_"
+              typeSpeed={70}
+            />
+          </h2>
+
+          <div className="max-w-xl space-y-5 text-base leading-8 text-gray-600 md:text-lg">
+            <p>
+              Based in Brisbane, Australia, I am pursuing a Master of
+              Information Technology, majoring in Network and Cyber Security at
+              Griffith University.
+            </p>
+
+            <p>
+              With over six years of enterprise IT experience, I am building a
+              career in cloud engineering, networking and cyber security.
+            </p>
+          </div>
+
+          <div className="mt-10 flex flex-wrap gap-4">
             <Button
               type="button"
               title="Contact Me"
@@ -60,14 +53,16 @@ const Hero = () => {
         </div>
 
         {/* Right Section */}
-        <div className="flex justify-center items-center">
-          <div className="rounded-full shadow-[0_3px_10px_rgba(0,0,0,0.2)] p-5">
+        <div className="flex justify-center md:justify-end">
+          <div className="w-full max-w-[520px]">
             <Image
-              className="rounded-full shadow-sm"
-              src="/silasBusinessCorp.png"
+              src="/1909s.jpg"
               alt="Silas Chan"
-              width={333}
-              height={333}
+              width={500}
+              height={650}
+              priority
+              className="w-full h-auto rounded-[32px] border-8 border-white shadow-2xl
+      dark:border-slate-700"
             />
           </div>
         </div>

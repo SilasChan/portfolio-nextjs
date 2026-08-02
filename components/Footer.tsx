@@ -1,283 +1,111 @@
-// "use client"
-// import React, { useState, useEffect } from "react"
-// import { FOOTER_LINKS, SOCIALS } from "@/constants"
-// import Image from "next/image"
-// import Link from "next/link"
-
-// const Footer: React.FC = () => {
-//   const [activeSection, setActiveSection] = useState("")
-
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       const scrollPosition = window.scrollY
-//       const sections = FOOTER_LINKS.map((link) => {
-//         const element = document.getElementById(link.sectionId) // Using sectionId to query section
-//         return element ? { id: link.key, top: element.offsetTop - 100 } : null
-//       }).filter(
-//         (section): section is NonNullable<typeof section> => section !== null
-//       )
-
-//       const currentSection = sections.find(
-//         (section) => scrollPosition >= section.top
-//       )
-//       if (currentSection) {
-//         setActiveSection(currentSection.id)
-//       }
-//     }
-
-//     window.addEventListener("scroll", handleScroll)
-//     handleScroll() // Call once to set initial active section
-//     return () => window.removeEventListener("scroll", handleScroll)
-//   }, [])
-
-//   const scrollToSection = (sectionId: string) => {
-//     const element = document.getElementById(sectionId) // Use sectionId directly
-//     if (element) {
-//       const navbarHeight = 80 // Adjust this value based on your navbar height
-//       const elementPosition = element.getBoundingClientRect().top
-//       const offsetPosition = elementPosition + window.pageYOffset - navbarHeight
-
-//       window.scrollTo({
-//         top: offsetPosition,
-//         behavior: "smooth",
-//       })
-//     }
-//   }
-
-//   return (
-//     <footer className="bg-[#F7AB0A] bg-cover bg-center bg-no-repeat px-6 pt-24 pb-8 text-black">
-//       <div className="max-w-7xl mx-auto">
-//         <div className="flex flex-col md:flex-row justify-between items-center gap-14 pb-16">
-//           <ul className="flex flex-wrap justify-center md:justify-start">
-//             {FOOTER_LINKS.map((link) => (
-//               <li key={link.key}>
-//                 <button
-//                   onClick={() => scrollToSection(link.sectionId)} // Pass sectionId instead of href
-//                   className={`p-4 text-sm font-medium ${
-//                     activeSection === link.key
-//                       ? "bg-dark-500"
-//                       : "text-black hover:text-white hover:bg-dark-500"
-//                   } transition-colors`}
-//                 >
-//                   {link.label}
-//                 </button>
-//               </li>
-//             ))}
-//           </ul>
-//           <ul className="flex gap-4">
-//             {SOCIALS.map((social) => (
-//               <li key={social.key}>
-//                 <Link
-//                   href={social.href}
-//                   className="flex items-center justify-center h-10 w-10 bg-black rounded-full hover:bg-gray-800 transition-colors"
-//                 >
-//                   <Image
-//                     src={social.imgURL}
-//                     alt={social.key}
-//                     width={20}
-//                     height={20}
-//                     className="invert"
-//                   />
-//                 </Link>
-//               </li>
-//             ))}
-//           </ul>
-//         </div>
-//         <hr className="border-gray-200 my-8" />
-//         <div className="text-center text-sm">
-//           &copy; {new Date().getFullYear()} Silas Chan. All rights reserved.
-//         </div>
-//       </div>
-//     </footer>
-//   )
-// }
-
-// export default Footer
-
-// "use client"
-// import React, { useState, useEffect } from "react"
-// import { FOOTER_LINKS, SOCIALS } from "@/constants"
-// import Image from "next/image"
-// import Link from "next/link"
-
-// const Footer: React.FC = () => {
-//   const [activeSection, setActiveSection] = useState("")
-
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       const scrollPosition = window.scrollY
-//       const sections = FOOTER_LINKS.map((link) => {
-//         const element = document.getElementById(link.sectionId) // Using sectionId to query section
-//         return element ? { id: link.key, top: element.offsetTop - 100 } : null
-//       }).filter(
-//         (section): section is NonNullable<typeof section> => section !== null
-//       )
-
-//       const currentSection = sections.find(
-//         (section) => scrollPosition >= section.top
-//       )
-//       if (currentSection) {
-//         setActiveSection(currentSection.id)
-//       }
-//     }
-
-//     window.addEventListener("scroll", handleScroll)
-//     handleScroll() // Call once to set initial active section
-//     return () => window.removeEventListener("scroll", handleScroll)
-//   }, [])
-
-//   const scrollToSection = (sectionId: string) => {
-//     const element = document.getElementById(sectionId) // Use sectionId directly
-//     if (element) {
-//       const navbarHeight = 80 // Adjust this value based on your navbar height
-//       const elementPosition = element.getBoundingClientRect().top
-//       const offsetPosition = elementPosition + window.pageYOffset - navbarHeight
-
-//       window.scrollTo({
-//         top: offsetPosition,
-//         behavior: "smooth",
-//       })
-//     }
-//   }
-
-//   return (
-//     <footer className="bg-yellow-500 dark:bg-gray-900 px-6 pt-24 pb-8 text-black dark:text-gray-300">
-//       <div className="max-w-7xl mx-auto">
-//         <div className="flex flex-col md:flex-row justify-between items-center gap-14 pb-16">
-//           <ul className="flex flex-wrap justify-center md:justify-start">
-//             {FOOTER_LINKS.map((link) => (
-//               <li key={link.key}>
-//                 <button
-//                   onClick={() => scrollToSection(link.sectionId)} // Pass sectionId instead of href
-//                   className={`p-4 text-sm font-medium transition-colors duration-300 ${
-//                     activeSection === link.key
-//                       ? "bg-gray-800 text-white dark:bg-yellow-400"
-//                       : "text-black hover:text-white hover:bg-gray-800 dark:text-gray-300 dark:hover:text-white dark:hover:bg-yellow-400"
-//                   }`}
-//                 >
-//                   {link.label}
-//                 </button>
-//               </li>
-//             ))}
-//           </ul>
-//           <ul className="flex gap-4">
-//             {SOCIALS.map((social) => (
-//               <li key={social.key}>
-//                 <Link
-//                   href={social.href}
-//                   className="flex items-center justify-center h-10 w-10 bg-gray-800 rounded-full hover:bg-gray-700 dark:bg-gray-700 dark:hover:bg-yellow-400 transition-colors"
-//                 >
-//                   <Image
-//                     src={social.imgURL}
-//                     alt={social.key}
-//                     width={20}
-//                     height={20}
-//                     className="invert dark:invert-0"
-//                   />
-//                 </Link>
-//               </li>
-//             ))}
-//           </ul>
-//         </div>
-//         <hr className="border-gray-200 dark:border-gray-700 my-8" />
-//         <div className="text-center text-sm">
-//           &copy; {new Date().getFullYear()} Silas Chan. All rights reserved.
-//         </div>
-//       </div>
-//     </footer>
-//   )
-// }
-
-// export default Footer
-
 "use client"
-import React, { useState, useEffect } from "react"
-import { FOOTER_LINKS, SOCIALS } from "@/constants"
+
+import React from "react"
 import Image from "next/image"
-import Link from "next/link"
+import { SOCIALS } from "@/constants"
 
-const Footer: React.FC = () => {
-  const [activeSection, setActiveSection] = useState("")
+const FOOTER_LINKS = [
+  {
+    id: "about",
+    label: "About",
+  },
+  {
+    id: "projects",
+    label: "Projects",
+  },
+  {
+    id: "skills",
+    label: "Skills",
+  },
+  {
+    id: "certifications",
+    label: "Certifications",
+  },
+]
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY
-      const sections = FOOTER_LINKS.map((link) => {
-        const element = document.getElementById(link.sectionId)
-        return element ? { id: link.key, top: element.offsetTop - 100 } : null
-      }).filter(
-        (section): section is NonNullable<typeof section> => section !== null
-      )
-
-      const currentSection = sections.find(
-        (section) => scrollPosition >= section.top
-      )
-      if (currentSection) {
-        setActiveSection(currentSection.id)
-      }
-    }
-
-    window.addEventListener("scroll", handleScroll)
-    handleScroll()
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-
+const Footer = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
-    if (element) {
-      const navbarHeight = 80 // Adjust this value based on your navbar height
-      const elementPosition = element.getBoundingClientRect().top
-      const offsetPosition = elementPosition + window.pageYOffset - navbarHeight
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      })
+    if (!element) {
+      console.warn(`Section not found: #${sectionId}`)
+      return
     }
+
+    element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    })
   }
 
   return (
-    <footer className="bg-[#F7AB0A] dark:bg-gray-900 px-6 pt-24 pb-8 text-black dark:text-gray-300">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-14 pb-16">
-          <ul className="flex flex-wrap justify-center md:justify-start">
-            {FOOTER_LINKS.map((link) => (
-              <li key={link.key}>
-                <button
-                  onClick={() => scrollToSection(link.sectionId)}
-                  className={`p-4 text-sm font-medium transition-colors duration-300 ${
-                    activeSection === link.key
-                      ? "text-white"
-                      : "text-black hover:text-white dark:text-gray-300 dark:hover:text-white"
-                  }`}
-                >
-                  {link.label}
-                </button>
-              </li>
-            ))}
-          </ul>
-          <ul className="flex gap-4">
+    <footer className="bg-[#F7AB0A] text-slate-900 dark:bg-slate-900 dark:text-slate-300">
+      <div className="max-container padding-container py-12 lg:py-16">
+        {/* Main footer content */}
+        <div className="flex flex-col items-center justify-between gap-10 md:flex-row">
+          {/* Footer navigation */}
+          <nav aria-label="Footer navigation">
+            <ul className="flex flex-wrap justify-center gap-2 md:justify-start">
+              {FOOTER_LINKS.map((link) => (
+                <li key={link.id}>
+                  <button
+                    type="button"
+                    onClick={() => scrollToSection(link.id)}
+                    className="rounded-full px-4 py-2 text-sm font-bold transition duration-200 hover:bg-black/10 hover:text-slate-950 focus:outline-none focus:ring-2 focus:ring-slate-900 dark:hover:bg-white/10 dark:hover:text-white dark:focus:ring-amber-400"
+                  >
+                    {link.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          {/* Social links */}
+          <ul className="flex items-center gap-3">
             {SOCIALS.map((social) => (
               <li key={social.key}>
-                <Link
+                <a
                   href={social.href}
-                  className="flex items-center justify-center h-10 w-10 bg-gray-800 rounded-full hover:bg-gray-700 dark:bg-gray-700 dark:hover:bg-yellow-400 transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Visit Silas Chan on ${social.key}`}
+                  className="flex h-11 w-11 items-center justify-center rounded-full bg-slate-900 transition duration-300 hover:-translate-y-1 hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:ring-offset-2 focus:ring-offset-[#F7AB0A] dark:bg-slate-700 dark:hover:bg-[#F7AB0A] dark:focus:ring-amber-400 dark:focus:ring-offset-slate-900"
                 >
                   <Image
                     src={social.imgURL}
-                    alt={social.key}
+                    alt=""
                     width={20}
                     height={20}
+                    aria-hidden="true"
                     className="invert dark:invert-0"
                   />
-                </Link>
+                </a>
               </li>
             ))}
           </ul>
         </div>
-        <hr className="border-gray-200 dark:border-gray-700 my-8" />
-        <div className="text-center text-sm">
-          &copy; {new Date().getFullYear()} Silas Chan. All rights reserved.
+
+        {/* Divider */}
+        <hr className="my-8 border-black/15 dark:border-slate-700" />
+
+        {/* Copyright */}
+        <div className="flex flex-col items-center justify-between gap-3 text-center text-sm md:flex-row md:text-left">
+          <p>
+            &copy; {new Date().getFullYear()} Silas Chan. All rights reserved.
+          </p>
+
+          <button
+            type="button"
+            onClick={() =>
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              })
+            }
+            className="font-semibold transition hover:text-white dark:hover:text-[#F7AB0A]"
+          >
+            Back to top ↑
+          </button>
         </div>
       </div>
     </footer>

@@ -3,7 +3,7 @@ export const Nav_LINKS = [
   { href: "/", key: "about", label: "About" },
   { href: "/", key: "skills", label: "Skills" },
   { href: "/", key: "certificatie", label: "Certificatie" },
-  { href: "/", key: "portfolio", label: "Portfolio" },
+  { href: "/", key: "projects", label: "Projects" },
   // { href: "/", key: "contact", label: "Contact Us" },
 ]
 
@@ -112,8 +112,8 @@ export const Certificates = [
   },
 ]
 
-// Portfolio Section
-export const PORTFOLIO = [
+// Projects Section
+export const Projects = [
   {
     title: "Google Cloud Platform (GCP) Migration",
     ImgURL: "/project1.png",
