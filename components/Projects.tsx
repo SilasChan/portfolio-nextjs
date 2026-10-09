@@ -8,25 +8,23 @@ import { Projects as enterpriseProjects } from "@/constants"
 
 const cloudProjects = [
   {
-    title: "Static Website Hosting on AWS",
-    imgURL: "/static_website.jpg",
+    title: "Highly Available & Scalable AWS Architecture",
+    imgURL: "/aws-high-availability.png",
     description:
-      "Designed and deployed a secure static website architecture using AWS content delivery, DNS and certificate management services.",
+      "Designed and built a highly available and scalable AWS architecture, focusing on fault tolerance, reliability and infrastructure scalability.",
     technologies: [
-      "Amazon S3",
-      "CloudFront",
-      "Route 53",
-      "AWS Certificate Manager",
-      "IAM",
+      "AWS",
+      "High Availability",
+      "Scalability",
+      "Cloud Architecture",
     ],
     outcomes: [
-      "Hosted static website files using Amazon S3.",
-      "Delivered content globally through Amazon CloudFront.",
-      "Configured custom-domain DNS routing using Route 53.",
-      "Enabled HTTPS using an ACM SSL/TLS certificate.",
+      "Designed a cloud architecture with high availability in mind.",
+      "Explored infrastructure scalability and fault tolerance.",
+      "Documented the architecture and implementation process.",
     ],
     mediumURL:
-      "https://medium.com/@silaschan421/static-website-hosting-on-aws-be6a42967269",
+      "https://medium.com/@silaschan421/building-a-highly-available-scalable-aws-architecture-from-scratch-5481415babac",
   },
   {
     title: "Amazon Polly Text-to-Speech",
@@ -50,6 +48,27 @@ const cloudProjects = [
     mediumURL:
       "https://medium.com/@silaschan421/a-narrator-using-amazon-polly-text-to-speech-a9e796792e2c",
   },
+  {
+    title: "Static Website Hosting on AWS",
+    imgURL: "/static_website.jpg",
+    description:
+      "Designed and deployed a secure static website architecture using AWS content delivery, DNS and certificate management services.",
+    technologies: [
+      "Amazon S3",
+      "CloudFront",
+      "Route 53",
+      "AWS Certificate Manager",
+      "IAM",
+    ],
+    outcomes: [
+      "Hosted static website files using Amazon S3.",
+      "Delivered content globally through Amazon CloudFront.",
+      "Configured custom-domain DNS routing using Route 53.",
+      "Enabled HTTPS using an ACM SSL/TLS certificate.",
+    ],
+    mediumURL:
+      "https://medium.com/@silaschan421/static-website-hosting-on-aws-be6a42967269",
+  },
 ]
 
 /* -------------------------------------------------------------------------- */
@@ -70,6 +89,28 @@ const Projects = () => {
       </div>
 
       <div className="space-y-24">
+        {/* Cloud Projects */}
+        <div>
+          <ProjectSectionHeader
+            title="Cloud Projects"
+            description="Hands-on AWS projects demonstrating cloud architecture, content delivery, serverless automation, security and event-driven services."
+          />
+
+          <ul className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
+            {cloudProjects.map((project) => (
+              <CloudProjectCard
+                key={project.title}
+                title={project.title}
+                imgURL={project.imgURL}
+                description={project.description}
+                technologies={project.technologies}
+                outcomes={project.outcomes}
+                mediumURL={project.mediumURL}
+              />
+            ))}
+          </ul>
+        </div>
+
         {/* Enterprise Projects */}
         <div>
           <ProjectSectionHeader
@@ -86,28 +127,6 @@ const Projects = () => {
                 description={project.description}
                 technologies={project.technologies}
                 achievements={project.achievements}
-              />
-            ))}
-          </ul>
-        </div>
-
-        {/* Cloud Projects */}
-        <div>
-          <ProjectSectionHeader
-            title="Cloud Projects"
-            description="Hands-on AWS projects demonstrating cloud architecture, content delivery, serverless automation, security and event-driven services."
-          />
-
-          <ul className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-            {cloudProjects.map((project) => (
-              <CloudProjectCard
-                key={project.title}
-                title={project.title}
-                imgURL={project.imgURL}
-                description={project.description}
-                technologies={project.technologies}
-                outcomes={project.outcomes}
-                mediumURL={project.mediumURL}
               />
             ))}
           </ul>
