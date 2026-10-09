@@ -1,5 +1,6 @@
-/** @type {import('tailwindcss').Config} */
-export default {
+import type { Config } from "tailwindcss"
+
+const config: Config = {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -21,10 +22,10 @@ export default {
           90: "#141414",
         },
         dark: {
-          100: "#f5f5f5", // Example light gray
-          200: "#d1d5db", // Lighter color shades for dark mode
-          800: "#1f2937", // Dark background
-          900: "#111827", // Even darker shade
+          100: "#f5f5f5",
+          200: "#d1d5db",
+          800: "#1f2937",
+          900: "#111827",
         },
       },
       backgroundImage: {
@@ -49,3 +50,5 @@ export default {
   plugins: [],
   darkMode: "class",
 }
+
+export default config

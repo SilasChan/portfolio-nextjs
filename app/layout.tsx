@@ -6,11 +6,9 @@ import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 
 export const metadata: Metadata = {
-  title: "Portfolio",
-  description: "Portfolio app",
-  // icons: {
-  //   icon: ["/favicon.ico"],
-  // },
+  title: "Silas Chan | Cloud & Cyber Security Portfolio",
+  description:
+    "Portfolio of Silas Chan, an aspiring Cloud Engineer based in Brisbane, Australia. Explore cloud projects, enterprise IT experience, networking and cyber security skills, and professional certifications.",
 }
 
 const martianMono = Martian_Mono({
@@ -26,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={martianMono.variable}>
+    <html lang="en" className={martianMono.variable} suppressHydrationWarning>
       <body className="font-martianMono">
         <Provider>
           <Navbar />

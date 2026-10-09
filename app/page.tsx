@@ -6,6 +6,8 @@ import Skills from "@/components/Skills"
 import Certifications from "@/components/Certifications"
 import React from "react"
 
+// @next-codemod-ignore Cache Components adoption: this segment temporarily allows blocking.
+
 const page = () => {
   return (
     <div>

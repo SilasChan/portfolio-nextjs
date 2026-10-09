@@ -73,11 +73,10 @@ const Footer = () => {
                 >
                   <Image
                     src={social.imgURL}
-                    alt=""
+                    alt={social.key}
                     width={20}
                     height={20}
-                    aria-hidden="true"
-                    className="invert dark:invert-0"
+                    className="h-5 w-5 invert dark:invert-0"
                   />
                 </a>
               </li>
