@@ -1,16 +1,41 @@
-import React from "react"
 import Image from "next/image"
+import Link from "next/link"
+import { Cloud, Network, ShieldCheck, ArrowUpRight } from "lucide-react"
+
 import { Projects as enterpriseProjects } from "@/constants"
 import { cloudProjects } from "@/data/cloudProjects"
-
-import CloudProjectCard, {
-  TechnologyTags,
-  OutcomeList,
-} from "@/components/CloudProjectCard"
+import { TechnologyTags, OutcomeList } from "@/components/CloudProjectCard"
 
 /* -------------------------------------------------------------------------- */
-/*                               Cloud Projects                               */
+/*                         Project Category Data                              */
 /* -------------------------------------------------------------------------- */
+
+const projectCategories = [
+  {
+    title: "Cloud Computing",
+    href: "/cloud",
+    description:
+      "AWS architecture, high availability, serverless automation and cloud services.",
+    label: `${cloudProjects.length} Projects`,
+    icon: Cloud,
+  },
+  {
+    title: "Networking",
+    href: "/networking",
+    description:
+      "Routing, switching, VLANs, DNS and practical network troubleshooting.",
+    label: "Explore Networking",
+    icon: Network,
+  },
+  {
+    title: "Cybersecurity",
+    href: "/security",
+    description:
+      "Security monitoring, digital forensics, incident investigation and network security.",
+    label: "Explore Security",
+    icon: ShieldCheck,
+  },
+]
 
 /* -------------------------------------------------------------------------- */
 /*                              Projects Section                              */
@@ -30,25 +55,55 @@ const Projects = () => {
       </div>
 
       <div className="space-y-24">
-        {/* Cloud Projects */}
+        {/* Project Category Overview */}
         <div>
           <ProjectSectionHeader
-            title="Cloud Projects"
-            description="Hands-on AWS projects demonstrating cloud architecture, content delivery, serverless automation, security and event-driven services."
+            title="Explore My Projects"
+            description="Browse my hands-on projects and technical labs across cloud computing, networking and cybersecurity."
           />
 
-          <ul className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
-            {cloudProjects.map((project) => (
-              <CloudProjectCard
-                key={project.title}
-                title={project.title}
-                imgURL={project.imgURL}
-                description={project.description}
-                technologies={project.technologies}
-                outcomes={project.outcomes}
-                mediumURL={project.mediumURL}
-              />
-            ))}
+          <ul className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {projectCategories.map((category) => {
+              const Icon = category.icon
+
+              return (
+                <li key={category.href}>
+                  <Link
+                    href={category.href}
+                    className="group flex h-full min-h-64 flex-col rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[#F7AB0A] hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#F7AB0A] focus:ring-offset-2 dark:border-slate-600 dark:bg-slate-700 dark:focus:ring-offset-slate-800"
+                  >
+                    {/* Icon and arrow */}
+                    <div className="flex items-start justify-between">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-100 text-amber-600 dark:bg-amber-400/15 dark:text-[#F7AB0A]">
+                        <Icon size={28} aria-hidden="true" />
+                      </div>
+
+                      <ArrowUpRight
+                        size={22}
+                        aria-hidden="true"
+                        className="text-slate-400 transition duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-[#F7AB0A]"
+                      />
+                    </div>
+
+                    {/* Category title */}
+                    <h3 className="mt-7 text-2xl font-bold leading-tight text-slate-900 dark:text-white">
+                      {category.title}
+                    </h3>
+
+                    {/* Category description */}
+                    <p className="mt-3 flex-1 text-sm leading-7 text-slate-600 dark:text-slate-300">
+                      {category.description}
+                    </p>
+
+                    {/* Category link label */}
+                    <div className="mt-6 flex items-center gap-2 text-sm font-bold text-amber-600 dark:text-[#F7AB0A]">
+                      {category.label}
+                      <span aria-hidden="true">→</span>
+                    </div>
+                  </Link>
+                </li>
+              )
+            })}
           </ul>
         </div>
 
@@ -71,20 +126,6 @@ const Projects = () => {
               />
             ))}
           </ul>
-        </div>
-
-        {/* Networking and Security Labs */}
-        <div>
-          <ProjectSectionHeader
-            title="Networking & Security Labs"
-            description="Technical labs completed through university study, certification preparation and independent practice."
-          />
-
-          <div className="rounded-2xl border border-dashed border-slate-300 bg-white/50 px-6 py-14 text-center dark:border-slate-600 dark:bg-slate-700/40">
-            <p className="font-semibold text-slate-500 dark:text-slate-300">
-              Networking and cyber security labs will be added soon.
-            </p>
-          </div>
         </div>
       </div>
     </section>
@@ -174,9 +215,5 @@ const EnterpriseProjectCard = ({
     </li>
   )
 }
-
-/* -------------------------------------------------------------------------- */
-/*                            Cloud Project Card                              */
-/* -------------------------------------------------------------------------- */
 
 export default Projects
